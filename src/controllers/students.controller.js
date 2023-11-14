@@ -18,7 +18,7 @@ const createStudent = async (req, res, next) => {
         const newStudent = new Student(body);
         const savedStudent = await newStudent.save();
         if (!savedStudent) throw httpError(500, "Student not created");
-        res.status(201).json({ message: "Movie created", data: savedStudent });
+        res.status(201).json({ message: "Student created", data: savedStudent });
     } catch (error) {
         next(error);
     }
